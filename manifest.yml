@@ -1,0 +1,8 @@
+---
+applications:
+- name: individual_job
+  memory: 512M
+  instances: 2
+  buildpack: java_buildpack
+  path: ./target/initial_load_replica-0.0.1-SNAPSHOT.jar
+  host: euge-migracion

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: initialload
+  profiles:
+    active:
+      dev
+

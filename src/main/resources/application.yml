@@ -1,0 +1,34 @@
+server:
+  port: 8081
+  
+logging:
+  level:
+    org.springframework.web: WARN
+    com.euge.initialload: DEBUG
+
+initialload:
+  jobname: individual
+  migracion: true
+  sizeUnitWork: 1000
+  freqCommit: 20
+  tries: 3
+  freq: "0 */1 * * * *"
+
+health:
+  prometheus: "*/30 * * * * *"
+  pg: http://192.168.1.131:9091
+  active: true
+  
+stagging:
+  usuario: initial_load
+  pass: vera1511
+  url: jdbc:oracle:thin:@192.168.1.131:1521:xe
+  show-sql: true
+  dialect: org.hibernate.dialect.Oracle10gDialect
+fda:
+  usuario: root
+  pass: vera1511
+  url: jdbc:mysql://192.168.1.131:3306/test
+  show-sql: true
+  dialect: org.hibernate.dialect.MySQLDialect
+  driver: com.mysql.jdbc.Driver
